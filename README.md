@@ -16,7 +16,7 @@
 请求参数说明
 
 |参数         |说明                           |
-|----         |----                          |
+|:----        |:----                          |
 |appid        |悟空数据分配给合作伙伴的AppId   |
 |redirect_uri |接收Code返回的地址             |
 
@@ -29,7 +29,7 @@
 请求参数说明
 
 |参数         |说明                           |
-|----         |----                          |
+|:----        |:----                         |
 |appid        |悟空数据分配给合作伙伴的AppId   |
 |appsecret    |应用的Secret                  |
 |code         |在上一步获得的code             |
@@ -48,7 +48,7 @@ access_token的有效期为2小时，过去后可用刷新令牌（refresh_token
 请求参数说明
 
 |参数         |说明                           |
-|----         |----                          |
+|:----        |:----                         |
 |appid        |悟空数据分配给合作伙伴的AppId   |
 |appsecret    |应用的Secret                  |
 |refresh_token|刷新令牌                      |
@@ -69,14 +69,14 @@ access_token的有效期为2小时，过去后可用刷新令牌（refresh_token
 
 **接口调用请求说明**
 
-> POST http://open.wukongdata.com/openv1/list
+> POST http://open.wukongdata.com/openv1/lists
 
 请求参数说明
 
 |参数             |说明                           |
-|----             |----                          |
+|:----            |:----                         |
 |access_token     |调用接口凭证                   |
-|wk_uid           |可选，默认是绑定的全部悟空用户   |
+|wk_uid           |可选，默认是绑定的全部悟空用户,多个wk_uid用','分割|
 |create_at        |可选，按指定日期查询，如2017-1-1 |
 |create_at_start  |可选，查询2017-1-1 之后的数据    |
 |create_at_end    |可选，查询2017-1-1 之前的数据    |
@@ -94,9 +94,10 @@ access_token的有效期为2小时，过去后可用刷新令牌（refresh_token
 请求参数说明
 
 |参数             |说明                           |
-|----             |----                          |
+|:----            |:----                         |
 |access_token     |调用接口凭证                   |
-|wk_uid           |可选，默认是绑定的全部悟空用户   |
+|wk_uid           |可选，默认是绑定的全部悟空用户,多个wk_uid用','分割|
+|list_id          |可选，默认是全部列表,多个list_id用','分割|
 |create_at        |可选，按指定日期查询，如2017-1-1 |
 |create_at_start  |可选，查询2017-1-1 之后的数据    |
 |create_at_end    |可选，查询2017-1-1 之前的数据    |
