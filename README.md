@@ -34,7 +34,16 @@
 |appsecret    |应用的Secret                  |
 |code         |在上一步获得的code             |
 
-~~返回结果示例~~
+返回结果示例
+
+``` json
+{
+    "access_token":"b1d7a9d145c9f251150709d9a879369b82cec96096d4281b7c95cd7e74623496",
+    "expires_in":"7200",
+    "refresh_token":"f8a0a8b55afe7d85d1c59665330dfb9df0adc8838f4bdedde4ec2cfad0515589",
+    "created_at":1490086229
+}
+```
 
 ### 1.3刷新access_token
 
@@ -81,7 +90,25 @@ access_token的有效期为2小时，过去后可用刷新令牌（refresh_token
 |create_at_start  |可选，查询2017-1-1 之后的数据    |
 |create_at_end    |可选，查询2017-1-1 之前的数据    |
 
-~~返回结果示例~~
+返回结果示例
+
+``` json
+[
+    {
+        "id":"1",
+        "title":"测试列表_A",
+        "uid":"1",
+        "create_time":"1489725391"
+    },
+    {
+        "id":"88",
+        "title":"测试列表_B",
+        "uid":"1",
+        "create_time":"1489145960"
+    }
+]
+
+```
 
 ### 2.2获取潜客信息
 
@@ -96,14 +123,30 @@ access_token的有效期为2小时，过去后可用刷新令牌（refresh_token
 |参数             |说明                           |
 |:----            |:----                         |
 |access_token     |调用接口凭证                   |
-|wk_uid           |可选，默认是绑定的全部悟空用户,多个wk_uid用','分割|
+|~~wk_uid~~       |~~可选，默认是绑定的全部悟空用户,多个wk_uid用','分割~~|
 |list_id          |可选，默认是全部列表,多个list_id用','分割|
 |create_at        |可选，按指定日期查询，如2017-1-1 |
 |create_at_start  |可选，查询2017-1-1 之后的数据    |
 |create_at_end    |可选，查询2017-1-1 之前的数据    |
 
-~~返回结果示例~~
+返回结果示例
 
+``` json
+[
+    {
+        "c_id":"100",
+        "name":",张三A,张三B,张_三,张三,test,",
+        "mobile":"0",
+        "email":",123456@qq.com,1234567@QQ.com,"
+    },
+    {
+        "c_id":"101",
+        "name":"0",
+        "mobile":",13212344321,",
+        "email":"0"
+    }
+]
+```
 
 ### 2.3加入悟空潜客
 
@@ -117,7 +160,7 @@ access_token的有效期为2小时，过去后可用刷新令牌（refresh_token
 请求参数说明
 
 |参数         |说明                           |
-|----         |----                          |
+|:----        |:----                         |
 |access_token | 调用接口凭证                  |
 |wk_uid       | 指定导入目标的悟空用户         |
 |name         |姓名                          |
@@ -127,9 +170,15 @@ access_token的有效期为2小时，过去后可用刷新令牌（refresh_token
 |qq           |qq                            |
 
 
+返回结果示例
 
+``` json
 
-~~返回结果示例~~
+{
+    "errcode":"100",
+    "errmsg":"success",
+}
+```
 
 
 批量导入：
