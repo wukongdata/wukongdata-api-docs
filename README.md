@@ -4,7 +4,7 @@
 ## 一、认证&授权
 
 1. 获取授权码
-2. 利用授权码和AppId、AppSecrect获取access_token
+2. 利用授权码和AppId、AppSecret获取access_token
 3. 刷新access_token
 
 ### 1.1获取授权码（code）
@@ -17,10 +17,10 @@
 
 |参数         |说明                           |
 |:----        |:----                          |
-|appid        |悟空数据分配给合作伙伴的AppId   |
+|app_id       |悟空数据分配给合作伙伴的AppId   |
 |redirect_uri |接收Code返回的地址             |
 
-### 1.2利用授权码和AppId、AppSecrect获取access_token
+### 1.2利用授权码和AppId、AppSecret获取access_token
 
 **接口调用请求说明**
 
@@ -30,8 +30,8 @@
 
 |参数         |说明                           |
 |:----        |:----                         |
-|appid        |悟空数据分配给合作伙伴的AppId   |
-|appsecret    |应用的Secret                  |
+|app_id       |悟空数据分配给合作伙伴的AppId   |
+|app_secret   |应用的Secret                  |
 |code         |在上一步获得的code             |
 
 返回结果示例
@@ -58,12 +58,21 @@ access_token的有效期为2小时，过去后可用刷新令牌（refresh_token
 
 |参数         |说明                           |
 |:----        |:----                         |
-|appid        |悟空数据分配给合作伙伴的AppId   |
-|appsecret    |应用的Secret                  |
+|app_id       |悟空数据分配给合作伙伴的AppId   |
+|app_secret   |应用的Secret                  |
 |refresh_token|刷新令牌                      |
 
-~~返回结果示例~~
+返回结果示例
 
+``` json
+{
+    "access_token":"042a6dc2ecc188ff78a3ab37abe8a67e96b9bff013acedfb1d140579e2fbeb63",
+    "expires_in":"7200",
+    "refresh_token":"df3501a700c4c93bc2deac76fc396fcc9fd81843ad7f202f26c1a174c7357585",
+    "created_at":1490251072
+}
+
+```
 
 
 ## 二、数据API
@@ -155,14 +164,14 @@ access_token的有效期为2小时，过去后可用刷新令牌（refresh_token
 
 **接口调用请求说明**
 
-> POST http://open.wukongdata.com/importv1/potential
+> POST http://open.wukongdata.com/openv1/import
 
 请求参数说明
 
 |参数         |说明                           |
 |:----        |:----                         |
-|access_token | 调用接口凭证                  |
-|wk_uid       | 指定导入目标的悟空用户         |
+|access_token |调用接口凭证                   |
+|wk_uid       |指定导入目标的一个悟空用户      |
 |name         |姓名                          |
 |mobile       |手机                          |
 |email        |邮箱                          |
@@ -190,14 +199,14 @@ access_token的有效期为2小时，过去后可用刷新令牌（refresh_token
         "wk_uid":"123",
         "data":[
             {
-                "name":"\u674ebuli",
+                "name":"张三",
                 "mobile":"13212341234",
-                "email":"li@163.com",
+                "email":"zhang@163.com",
                 "wechat":"wechat_id",
                 "qq":"qq123456"
             },
             {
-                "name":"\u674ebuli",
+                "name":"李四",
                 "mobile":"13212341234",
                 "email":"li@163.com",
                 "wechat":"wechat_id",
