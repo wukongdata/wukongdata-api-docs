@@ -132,7 +132,6 @@ access_token的有效期为2小时，过去后可用刷新令牌（refresh_token
 |参数             |说明                           |
 |:----            |:----                         |
 |access_token     |调用接口凭证                   |
-|~~wk_uid~~       |~~可选，默认是绑定的全部悟空用户,多个wk_uid用','分割~~|
 |list_id          |可选，默认是全部列表,多个list_id用','分割|
 |create_at        |可选，按指定日期查询，如2017-1-1 |
 |create_at_start  |可选，查询2017-1-1 之后的数据    |
