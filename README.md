@@ -32,6 +32,7 @@
 |:----        |:----                         |
 |app_id       |悟空数据分配给合作伙伴的AppId   |
 |app_secret   |应用的Secret                  |
+|grant_type   |获取token:authorization_code, 刷新token:refresh_token|
 |code         |在上一步获得的code             |
 
 返回结果示例
