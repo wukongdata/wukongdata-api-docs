@@ -32,7 +32,7 @@
 |:----        |:----                         |
 |app_id       |悟空数据分配给合作伙伴的AppId   |
 |app_secret   |应用的Secret                  |
-|grant_type   |获取token:authorization_code, 刷新token:refresh_token|
+|grant_type   |值为 codeauthorization_code    |
 |code         |在上一步获得的code             |
 
 返回结果示例
@@ -60,6 +60,7 @@ access_token的有效期为2小时，过去后可用刷新令牌（refresh_token
 |参数         |说明                           |
 |:----        |:----                         |
 |app_id       |悟空数据分配给合作伙伴的AppId   |
+|grant_type   |值为 refresh_token            |
 |app_secret   |应用的Secret                  |
 |refresh_token|刷新令牌                      |
 
