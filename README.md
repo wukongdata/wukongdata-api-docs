@@ -32,7 +32,7 @@
 |:----        |:----                         |
 |app_id       |悟空数据分配给合作伙伴的AppId   |
 |app_secret   |应用的Secret                  |
-|grant_type   |值为 codeauthorization_code    |
+|grant_type   |值为 authorization_code       |
 |code         |在上一步获得的code             |
 
 返回结果示例
